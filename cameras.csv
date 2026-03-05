@@ -1,0 +1,4 @@
+ip,name,location,web_port,web_path
+192.168.1.101,Entrance-01,Main Entrance,80,/
+192.168.1.102,Entrance-02,Main Entrance,80,/
+192.168.1.103,Parking-01,Parking Lot,8080,/login

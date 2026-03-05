@@ -1,0 +1,37 @@
+Установка на ПК
+
+# 1. Создать папку
+mkdir "C:\CameraAgent"
+
+# 2. Скопировать файлы
+copy agent.exe C:\CameraAgent\
+copy config.json C:\CameraAgent\
+
+# 3. Добавить в автозагрузку (текущий пользователь)
+$startup = "$env:APPDATA\Microsoft\Windows\Start Menu\Programs\Startup"
+$WshShell = New-Object -comObject WScript.Shell
+$Shortcut = $WshShell.CreateShortcut("$startup\CameraAgent.lnk")
+$Shortcut.TargetPath = "C:\CameraAgent\agent.exe"
+$Shortcut.WorkingDirectory = "C:\CameraAgent"
+$Shortcut.Save()
+
+# Или через реестр (для всех пользователей)
+reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v CameraAgent /t REG_SZ /d "C:\CameraAgent\agent.exe" /f
+
+# 4. Запуск
+C:\CameraAgent\agent.exe
+
+# 5. Проверка логов
+Get-Content C:\CameraAgent\logs\agent.log -Tail 10
+
+Управление
+
+# Проверить запущен ли
+tasklist | findstr agent.exe
+
+# Остановить
+taskkill /F /IM agent.exe
+
+# Удалить из автозагрузки
+reg delete "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run" /v CameraAgent /f
+# или удалить ярлык из Startup

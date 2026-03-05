@@ -1,0 +1,8 @@
+customtkinter
+fastapi
+uvicorn
+aiohttp
+aioping
+aiosqlite
+pystray
+Pillow

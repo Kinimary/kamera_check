@@ -1,0 +1,14 @@
+{
+    "server_url": "http://192.168.1.100:8080",
+    "agent": {
+        "id": "office-a-01",
+        "name": "Office A",
+        "location": "Building A, Floor 1",
+        "vpn_target": "10.0.0.1"
+    },
+    "cameras": [
+        {"ip": "192.168.10.101", "name": "Entrance-01", "location": "Main Entrance"},
+        {"ip": "192.168.10.102", "name": "Corridor-01", "location": "North Corridor"},
+        {"ip": "192.168.10.103", "name": "Server-Room", "location": "Server Room", "web_port": 8080}
+    ]
+}
