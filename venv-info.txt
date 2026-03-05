@@ -7,6 +7,9 @@ python -m venv venv
 # 3. Активировать
 venv\Scripts\activate
 
+#3.1 Деактивация
+venv\Scripts\deactivate
+
 # 4. Проверить (должно показать путь внутри venv)
 where python
 where pip
