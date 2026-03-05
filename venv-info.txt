@@ -8,7 +8,7 @@ python -m venv venv
 venv\Scripts\activate
 
 #3.1 Деактивация
-venv\Scripts\deactivate
+deactivate
 
 # 4. Проверить (должно показать путь внутри venv)
 where python
